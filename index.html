@@ -1,15 +1,48 @@
-<html>
 <link rel="stylesheet" href="home.css">
 
-<title>How to Use a lighter</title>
 <body>
-   
+ 
+
+<style>
+        .randomImage {
+            position: absolute;
+            width: 200px; /* Set the desired width */
+        }
+    </style>
+<body>
+
+<script>
+    function showImageAtRandomPosition() {
+        const imageUrl = 'https://png.pngtree.com/png-clipart/20220727/ourmid/pngtree-realistic-fire-flame-element-png-and-psd-png-image_6080058.png'; // Replace with your image URL
+
+        // Create a new image element
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.classList.add('randomImage');
+
+        // Get the viewport dimensions
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Generate random position
+        const randomX = Math.random() * (viewportWidth - 100); // Adjust based on image width
+        const randomY = Math.random() * (viewportHeight - 100); // Adjust based on image height
+
+        // Set the position
+        image.style.left = `${randomX}px`;
+        image.style.top = `${randomY}px`;
+
+        // Add the image to the body
+        document.body.appendChild(image);
+    }
+
+    // Add event listener for mouse clicks
+    document.addEventListener('click', showImageAtRandomPosition);
+</script>
+  
     <header>
         <div class="lighter">
-            <div class="flame">
-                img src=
-                <div class="squiggle"></div>
-            </div>
+            <div class="flame"></div>
             <div class="switch" id="switch">X</div>
         </div>
     </header>
@@ -35,7 +68,7 @@
         </div>
     </main>
 
-   
-    <script src="home.js" defer></script>
+    <script src="home.js"></script>
+  
 </body>
 </html>
